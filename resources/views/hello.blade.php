@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <p class="text-5xl text-red-500">angga love bayu</p>
+    <p class="text-5xl text-red-500">homok semua</p>
 </body>
 
 </html>
