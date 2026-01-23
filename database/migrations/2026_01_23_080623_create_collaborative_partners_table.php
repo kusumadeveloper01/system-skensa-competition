@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('collaborative_partners', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('phone_number');
+            $table->string('address');
+            $table->string('contact_person');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
