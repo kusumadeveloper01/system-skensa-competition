@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CompetitionCollaborativePartner extends Model
+class CompCollabPartner extends Model
 {
     protected $guarded = [];
 

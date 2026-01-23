@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('competition_collaborative_partners', function (Blueprint $table) {
+        Schema::create('comp_collab_partners', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Competition::class)->constrained()->onDelete('cascade');
             $table->foreignIdFor(CollaborativePartner::class)->constrained()->onDelete('cascade');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('competition_collaborative_partners');
+        Schema::dropIfExists('comp_collab_partners');
     }
 };
