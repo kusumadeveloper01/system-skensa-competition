@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Models\CompetitionTopicCategory;
+use App\Http\Controllers\Controller;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
-class CompetitionTopicCategoryController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class CompetitionTopicCategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(CompetitionTopicCategory $competitionTopicCategory)
+    public function show(Teacher $teacher)
     {
         //
     }
@@ -42,7 +43,7 @@ class CompetitionTopicCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CompetitionTopicCategory $competitionTopicCategory)
+    public function edit(Teacher $teacher)
     {
         //
     }
@@ -50,7 +51,7 @@ class CompetitionTopicCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CompetitionTopicCategory $competitionTopicCategory)
+    public function update(Request $request, Teacher $teacher)
     {
         //
     }
@@ -58,7 +59,7 @@ class CompetitionTopicCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CompetitionTopicCategory $competitionTopicCategory)
+    public function destroy(Teacher $teacher)
     {
         //
     }

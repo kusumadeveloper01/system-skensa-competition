@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Models\Student;
+use App\Http\Controllers\Controller;
+use App\Models\CollaborativePartner;
 use Illuminate\Http\Request;
 
-class StudentController extends Controller
+class CollaborativePartnerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Student $student)
+    public function show(CollaborativePartner $collaborativePartner)
     {
         //
     }
@@ -42,7 +43,7 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Student $student)
+    public function edit(CollaborativePartner $collaborativePartner)
     {
         //
     }
@@ -50,7 +51,7 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, CollaborativePartner $collaborativePartner)
     {
         //
     }
@@ -58,7 +59,7 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Student $student)
+    public function destroy(CollaborativePartner $collaborativePartner)
     {
         //
     }

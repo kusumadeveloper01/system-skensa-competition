@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Models\CollaborativePartner;
+use App\Http\Controllers\Controller;
+use App\Models\CompCollabPartner;
 use Illuminate\Http\Request;
 
-class CollaborativePartnerController extends Controller
+class CompCollabPartnerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class CollaborativePartnerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(CollaborativePartner $collaborativePartner)
+    public function show(CompCollabPartner $compCollabPartner)
     {
         //
     }
@@ -42,7 +43,7 @@ class CollaborativePartnerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CollaborativePartner $collaborativePartner)
+    public function edit(CompCollabPartner $compCollabPartner)
     {
         //
     }
@@ -50,7 +51,7 @@ class CollaborativePartnerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CollaborativePartner $collaborativePartner)
+    public function update(Request $request, CompCollabPartner $compCollabPartner)
     {
         //
     }
@@ -58,7 +59,7 @@ class CollaborativePartnerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CollaborativePartner $collaborativePartner)
+    public function destroy(CompCollabPartner $compCollabPartner)
     {
         //
     }

@@ -49,10 +49,10 @@
         <div>
             <div>
                 <div class="flex justify-center items-center p-5 rounded-lg ">
-                    @if ($navigation && $navigation->logo)
+                    {{-- @if ($navigation && $navigation->logo)
                         <img src="{{ asset(path: $navigation->logo) }}" alt=""
                             class="mx-auto h-20 object-contain">
-                    @endif
+                    @endif --}}
                 </div>
             </div>
 
@@ -85,13 +85,11 @@
                                         d="M5 5h4l3 3h6a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3m0 1a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-6.41l-3-3z" />
                                 </svg></x-slot:svg> Master Data</x-multi-nav-link>
                         <ul id="dropdown-child-2" class="">
-                            <x-inside-multi-nav-link href="{{ route('device-category.index') }}"
-                                :active="request()->is('admin/device-category*')">Device</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="{{ route('game.index') }}"
-                                :active="request()->is('admin/game*')">Game</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="{{ route('organizer.index') }}"
+                            <x-inside-multi-nav-link href="" :active="request()->is('admin/device-category*')">Device</x-inside-multi-nav-link>
+                            <x-inside-multi-nav-link href="" :active="request()->is('admin/game*')">Game</x-inside-multi-nav-link>
+                            <x-inside-multi-nav-link href=""
                                 :active="request()->is('admin/organizer*')">Organizer</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="{{ route('tournament.index') }}"
+                            <x-inside-multi-nav-link href=""
                                 :active="request()->is('admin/tournament*')">Tournament</x-inside-multi-nav-link>
                         </ul>
                     </div>
@@ -104,25 +102,24 @@
                                         d="M5 5h4l3 3h6a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3m0 1a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-6.41l-3-3z" />
                                 </svg></x-slot:svg> CMS</x-multi-nav-link>
                         <ul id="dropdown-child-2" class="">
-                            <x-inside-multi-nav-link href="{{ route('admin.navigation.index') }}"
+                            <x-inside-multi-nav-link href=""
                                 :active="request()->is('admin/navigation*')">Navigation</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="{{ route('admin.section-promo.index') }}"
-                                :active="request()->is('admin/section-promo*')">Section Promo</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="{{ route('admin.section-featured-game.index') }}"
-                                :active="request()->is('admin/featured-game*')">Section Game</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="{{ route('admin.section-tournament.index') }}"
-                                :active="request()->is('admin/section-tournament*')">Section Tournament</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="{{ route('admin.section-call-to-action.index') }}"
-                                :active="request()->is('admin/section-call-to-action*')">Section CTA</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="{{ route('admin.section-faq.index') }}"
-                                :active="request()->is('admin/section-faq*')">Section FAQ</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="{{ route('admin.section-testimonial.index') }}"
-                                :active="request()->is('admin/section-testimonial*')">Section Testimonial</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="{{ route('admin.section-gallery.index') }}"
-                                :active="request()->is('admin/section-gallery*')">Section Gallery</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="{{ route('admin.footer.index') }}"
-                                :active="request()->is('admin/footer*')">Footer</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="{{ route('social-media.index') }}" :active="request()->is('admin/social*')">Social
+                            <x-inside-multi-nav-link href="" :active="request()->is('admin/section-promo*')">Section
+                                Promo</x-inside-multi-nav-link>
+                            <x-inside-multi-nav-link href="" :active="request()->is('admin/featured-game*')">Section
+                                Game</x-inside-multi-nav-link>
+                            <x-inside-multi-nav-link href="" :active="request()->is('admin/section-tournament*')">Section
+                                Tournament</x-inside-multi-nav-link>
+                            <x-inside-multi-nav-link href="" :active="request()->is('admin/section-call-to-action*')">Section
+                                CTA</x-inside-multi-nav-link>
+                            <x-inside-multi-nav-link href="" :active="request()->is('admin/section-faq*')">Section
+                                FAQ</x-inside-multi-nav-link>
+                            <x-inside-multi-nav-link href="" :active="request()->is('admin/section-testimonial*')">Section
+                                Testimonial</x-inside-multi-nav-link>
+                            <x-inside-multi-nav-link href="" :active="request()->is('admin/section-gallery*')">Section
+                                Gallery</x-inside-multi-nav-link>
+                            <x-inside-multi-nav-link href="" :active="request()->is('admin/footer*')">Footer</x-inside-multi-nav-link>
+                            <x-inside-multi-nav-link href="" :active="request()->is('admin/social*')">Social
                                 Media</x-inside-multi-nav-link>
                         </ul>
                     </div>
@@ -135,7 +132,7 @@
                                         d="M5 5h4l3 3h6a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3m0 1a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-6.41l-3-3z" />
                                 </svg></x-slot:svg> User</x-multi-nav-link>
                         <ul id="dropdown-child-2" class="">
-                            <x-inside-multi-nav-link href="{{ route('participant.index') }}"
+                            <x-inside-multi-nav-link href=""
                                 :active="request()->is('admin/participant*')">Participant</x-inside-multi-nav-link>
                         </ul>
                     </div>
@@ -143,7 +140,7 @@
                 </ul>
 
                 <ul class="mt-28">
-                    <form id="logoutForm" action="{{ route('admin.logout') }}" method="POST">
+                    <form id="logoutForm" action="" method="POST">
                         @csrf
                         <x-nav-link href="javascript:void(0);" :active="request()->is('/logout')"
                             onclick="document.getElementById('logoutForm').submit();">

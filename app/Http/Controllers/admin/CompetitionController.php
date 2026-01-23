@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Models\CompCollabPartner;
+use App\Http\Controllers\Controller;
+use App\Models\Competition;
 use Illuminate\Http\Request;
 
-class CompCollabPartnerController extends Controller
+class CompetitionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class CompCollabPartnerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(CompCollabPartner $compCollabPartner)
+    public function show(Competition $competition)
     {
         //
     }
@@ -42,7 +43,7 @@ class CompCollabPartnerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CompCollabPartner $compCollabPartner)
+    public function edit(Competition $competition)
     {
         //
     }
@@ -50,7 +51,7 @@ class CompCollabPartnerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CompCollabPartner $compCollabPartner)
+    public function update(Request $request, Competition $competition)
     {
         //
     }
@@ -58,7 +59,7 @@ class CompCollabPartnerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CompCollabPartner $compCollabPartner)
+    public function destroy(Competition $competition)
     {
         //
     }
