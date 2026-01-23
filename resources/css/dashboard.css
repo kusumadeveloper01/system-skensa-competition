@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901&display=swap");
+@import "remixicon/fonts/remixicon.css";
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scrollbar */
+aside::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+aside {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.tab {
+    @apply inline-block p-4 border-b-2 rounded-t-lg;
+}
+
+.tab-active {
+    @apply text-red-200 border-accent-color;
+}
+
+.tab-inactive {
+    @apply hover:text-text-primary-color hover:border-gray-300 border-transparent;
+}
+
+.dd-closed {
+    @apply hidden;
+}
+
+.card-text-inactive {
+    @apply text-inactive-color;
+}
+
+.card-text-active {
+    @apply text-text-primary-color;
+}
+
+.breadcrumbs-inactive {
+    @apply text-2xl  text-inactive-color capitalize;
+}
+
+.breadcrumbs-active {
+    @apply text-2xl  text-text-primary-color capitalize;
+}
+
+.page-title {
+    @apply text-2xl font-medium text-text-primary-color capitalize;
+}
+
+.box-dashboard {
+    @apply bg-secondary-color p-8 rounded-xl mt-9 border border-border-color;
+}
+
+.card-dashboard {
+    @apply bg-secondary-color border grid grid-cols-1 gap-3 border-border-color p-3 rounded-xl mt-2 overflow-x-auto;
+}
+
+.input-container {
+    @apply grid grid-cols-2 gap-8 mb-8;
+}
+
+.button-primary {
+    @apply text-sm py-2 px-4 rounded-md border border-accent-color text-text-primary-color bg-accent-color flex justify-center items-center hover:brightness-110 transition-all;
+}
+
+.button-login {
+    @apply text-base py-3 px-6 rounded-md border border-accent-color text-secondary-color bg-accent-color w-full;
+}
+
+.button-success {
+    @apply flex flex-row gap-1 items-center text-sm p-2 rounded-md border border-success-color text-secondary-color bg-success-color transition-all;
+}
+
+.button-secondary {
+    @apply text-sm py-2 px-4 rounded-md border border-text-secondary-color bg-secondary-color text-text-primary-color hover:brightness-125;
+}
+
+.hide {
+    @apply -translate-x-full;
+}
+
+.full {
+    @apply w-full !ml-0;
+}
+
+table {
+    @apply w-full min-w-[940px] lg:min-w-fit table-auto whitespace-nowrap;
+}
+
+.disabled {
+    @apply text-text-secondary-color brightness-95;
+}
+
+aside,
+main,
+nav {
+    @apply duration-700 ease-in-out;
+}
+
+/* Table */
+.thead-cell {
+    @apply px-4 py-2 bg-primary-color text-left text-sm font-medium text-text-primary-color;
+}
+
+.table-cell {
+    @apply py-5 px-4 bg-secondary-color text-sm text-text-primary-color;
+}
+
+table {
+    @apply rounded-t-xl;
+}
+
+tr:nth-child(even) {
+    @apply brightness-110;
+}
+tr:nth-child(odd) {
+    @apply brightness-[.98];
+}
+
+table thead td:first-child {
+    @apply rounded-l-lg;
+}
+table thead td:last-child {
+    @apply rounded-r-lg;
+}
+
+.crud-subtitle {
+    @apply text-base font-medium text-text-primary-color mb-5;
+}
+
+/* Chosen */
+.input-box,
+.chosen-container {
+    @apply text-text-primary-color bg-secondary-color  placeholder-inactive-color border-2 border-border-color text-sm rounded-lg focus:ring-accent-color outline-accent-color focus:border-accent-color block w-full p-2.5 disabled:text-text-secondary-color disabled:brightness-95;
+}
+
+.chosen-single {
+    @apply !border-none !bg-none !appearance-none !p-0 !shadow-none !h-fit;
+}
+
+.chosen-container-single .chosen-single div {
+    display: none !important;
+}
+
+/* dashboard */
+
+.dashboard-title-small {
+    @apply font-medium text-text-secondary-color;
+}
+
+.dashboard-title-medium {
+    @apply font-semibold text-text-secondary-color text-xl;
+}
+
+.small-info {
+    @apply flex flex-col  gap-2;
+}
+
+.label-text {
+    @apply text-sm  text-inactive-color font-normal text-left;
+}
+
+.badge {
+    @apply bg-red-600 bg-opacity-15 text-text-primary-color p-1.5 rounded-md;
+}
+
+#reader {
+    width: 600px;
+}
+#result {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.big-title {
+}
+
+.medium-title {
+}
+
+.small-title {
+    @apply text-base font-medium;
+}
