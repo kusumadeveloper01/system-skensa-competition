@@ -19,30 +19,28 @@
     <header class="">
         <nav class="section-container navbar">
             <div class="logo">
-                <img src="{{ $navigation->logo }}" alt="" class="hidden lg:flex" />
-                <img src="{{ $navigation->logo }}" alt="" class="lg:hidden" />
-                {{-- <h1 class="logo font-poppins text-2xl font-semibold text-accent-color">
-                    Tax Navigator
-                </h1> --}}
+                <img src="" alt="" class="hidden lg:flex" />
+                <img src="" alt="" class="lg:hidden" />
+                <h1 class="logo font-poppins text-2xl font-semibold text-accent-color">
+                    SkensaLomba
+                </h1>
             </div>
+            <div class="flex flex-row items-center gap-12">
 
-            <ul class="nav-link-container">
-                @foreach ($navigation_items as $item)
-                    <li><a href="{{ $item->link }}">{{ $item->name }}</a></li>
-                @endforeach
-            </ul>
+                <ul class="nav-link-container">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#lomba">Lomba</a></li>
+                </ul>
 
+                <div class="button-container">
 
-            <div class="button-container">
-                @if ($navigation->button_primary && $navigation->button_primary_link)
-                    <a href="{{ $navigation->button_primary_link }}"
-                        class="button-primary">{{ $navigation->button_primary }}
+                    <a href="#" class="button-primary">Daftar Sekarang
                     </a>
-                @endif
-                <div class="h-6 w-6 text-text-primary-color lg:hidden" onclick="showNav()">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path>
-                    </svg>
+                    <div class="h-6 w-6 text-text-primary-color lg:hidden" onclick="showNav()">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -50,11 +48,10 @@
         <div class="nav-mobile nav-hidden" id="nav-mobile">
             <ul>
                 <li><a href="#home" onclick="closeNav()">Home</a></li>
-                <li><a href="#wcu" onclick="closeNav()">History</a></li>
+                <li><a href="#lomba" onclick="closeNav()">Lomba</a></li>
 
                 <div class="flex w-full flex-col gap-3 border-t border-text-inactive-color py-5">
-                    <button class="button-primary !w-full">Sign In</button>
-                    <button class="button-secondary">Sign Up</button>
+                    <button class="button-primary !w-full">Daftar Sekarang</button>
                 </div>
 
                 <div class="mt-14 h-6 w-6 cursor-pointer" onclick="closeNav()">
@@ -75,7 +72,7 @@
     {{-- <x-nav>Halo, <span class="text-accent-color">{{ Auth::guard('participant')->user()->full_name }}</span> !</x-nav> --}}
 
     <footer>
-        <div class="footer-top text-secondary-color">
+        <div class="footer-top text-white">
             <div class="col-span-1 xl:col-span-3">
                 <div class="flex w-full justify-center xl:justify-start">
                     <img src="" alt="" class="mx-auto lg:mx-0" />

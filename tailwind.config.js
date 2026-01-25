@@ -33,12 +33,12 @@ export default {
                 footerColor: "#660404",
 
                 // Main Color Pallette
-                "primary-color": "#121212",
+                "primary-color": "#FAFAFA",
                 "secondary-color": "#1a1a1a",
                 "third-color": "#222222",
                 "success-color": "#00A84F",
 
-                "accent-color": "#950101",
+                "accent-color": "#2764FF",
                 "accent-secondary-color": "#29405B",
 
                 "inactive-color": "#A1A1A1",
@@ -46,14 +46,15 @@ export default {
 
                 "border-color": "#525252",
 
-                "text-primary-color": "#fefefe",
-                "text-secondary-color": "#8D8A9D",
+                "text-primary-color": "#121212",
+                "text-secondary-color": "#fefefe",
             },
 
             fontFamily: {
                 urbanist: ["Urbanist"],
                 inter: ["Inter"],
                 satoshi: "Satoshi",
+                poppins: "Poppins",
             },
 
             backgroundImage: {
