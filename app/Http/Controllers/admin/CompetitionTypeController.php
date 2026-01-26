@@ -11,9 +11,16 @@ class CompetitionTypeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = CompetitionType::paginate(10);
+        $status = $request->filter ?? 'earliest';
+
+        if ($status == 'earliest') {
+            $data = CompetitionType::orderBy('id', 'asc')->paginate(10);
+        } elseif ($status == 'latest') {
+            $data = CompetitionType::orderBy('id', 'desc')->paginate(10);
+        }
+
         return view('admin.competition-type.index', compact('data'));
     }
 
