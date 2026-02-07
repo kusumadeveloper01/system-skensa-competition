@@ -30,7 +30,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .tab-active {
-    @apply text-red-200 border-accent-color;
+    @apply text-accent-color border-accent-color;
 }
 
 .tab-inactive {
@@ -74,7 +74,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .button-primary {
-    @apply text-sm py-2 px-4 rounded-md border border-accent-color text-text-primary-color bg-accent-color flex justify-center items-center hover:brightness-110 transition-all;
+    @apply text-sm py-2 px-4 rounded-md border border-accent-color text-primary-color bg-accent-color flex justify-center items-center hover:brightness-110 transition-all;
 }
 
 .button-login {

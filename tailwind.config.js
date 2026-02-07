@@ -11,55 +11,32 @@ export default {
                 desktop: "1440px",
             },
             screens: {
-                xs: "300px",
-                sm: "640px",
-                md: "768px",
-                lg: "1024px",
-                xl: "1280px",
-                "2xl": "1536px",
-                "3xl": "1700px",
-                "4xl": "2000px",
-                "5xl": "3000px",
                 desktop: "1440px",
             },
-            colors: {
-                primary: "#950101",
-                secondary: "#07CAA3",
-                thirdary: "#7C0404",
-                blackFB: "#0A0A0A",
-                whiteFB: "#FBFBFB",
-                bgInfo: "#181818",
-                bgPopUp: "#111111",
-                footerColor: "#660404",
+            fontFamily: {
+                poppins: "Poppins",
+                satoshi: "Satoshi",
+                grotesk: "Hanken Grotesk",
+                manrope: "Manrope",
+                spaceMono: "Space Mono",
+            },
 
+            colors: {
                 // Main Color Pallette
-                "primary-color": "#FAFAFA",
-                "secondary-color": "#1a1a1a",
+                "primary-color": "#ECF2F9",
+                "secondary-color": "#FFFFFF",
                 "third-color": "#222222",
                 "success-color": "#00A84F",
 
                 "accent-color": "#2764FF",
                 "accent-secondary-color": "#29405B",
-
-                "inactive-color": "#A1A1A1",
+                "inactive-color": "#A1A0A0",
                 "gray-button-color": "#F6F6F6",
 
-                "border-color": "#525252",
+                "border-color": "#8D8A9D80",
 
-                "text-primary-color": "#121212",
-                "text-secondary-color": "#fefefe",
-            },
-
-            fontFamily: {
-                urbanist: ["Urbanist"],
-                inter: ["Inter"],
-                satoshi: "Satoshi",
-                poppins: "Poppins",
-            },
-
-            backgroundImage: {
-                testi: "url('/public/assets/testi container.svg')",
-                heroList: "url('/public/assets/list-game-hero.svg')",
+                "text-primary-color": "#38315A",
+                "text-secondary-color": "#8D8A9D",
             },
         },
     },
