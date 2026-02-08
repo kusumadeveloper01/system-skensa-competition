@@ -22,6 +22,26 @@
             <p class="small-text">Lihat daftar perlombaan yang tersedia sesuai dengan minat dan kategori pilihanmu</p>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="lomba-card">
+                <img src="{{ asset('assets/images/lomba/sample-lomba.png') }}" alt="">
+                <button class="button-primary">Detail Lomba</button>
+                <h4 class="text !font-medium">Wonderkid Festifal</h4>
+                <div class="flex flex-col gap-3">
+                    <div class="flex flex-row items-center gap-1">
+                        <div class="w-6 h-6 object-contain bg-location"></div>
+                        <p class="text">RP. 100.000</p>
+                    </div>
+                    <div class="flex flex-row items-center gap-1">
+                        <div class="w-6 h-6 object-contain bg-location"></div>
+                        <p class="text">Online / Offline</p>
+                    </div>
+                    <div class="flex flex-row items-center gap-1">
+                        <div class="w-6 h-6 object-contain bg-location"></div>
+                        <p class="text">15 Des 2025 - 30 Jan 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </x-landing-page-layout>
