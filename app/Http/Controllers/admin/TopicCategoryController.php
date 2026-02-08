@@ -13,7 +13,15 @@ class TopicCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $status = $request->filter ?? 'earliest';
+
+        if ($status == 'earliest') {
+            $data = TopicCategory::orderBy('id', 'asc')->paginate(10);
+        } elseif ($status == 'latest') {
+            $data = TopicCategory::orderBy('id', 'desc')->paginate(10);
+        }
+
+        return view('admin.topic-category.index', compact('data'));
     }
 
     /**
@@ -21,7 +29,7 @@ class TopicCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.topic-category.create');
     }
 
     /**
@@ -29,38 +37,60 @@ class TopicCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        $data = [
+            'name' => $request->name,
+        ];
+
+        TopicCategory::create($data);
+
+        return redirect()->route('admin.topic-category.index')->with('success', 'Topic Category Created Successfully!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(TopicCategory $topicCategory)
+    public function show(TopicCategory $topic_category)
     {
-        //
+        return view('admin.topic-category.show', compact('topic_category'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TopicCategory $topicCategory)
+    public function edit(TopicCategory $topic_category)
     {
-        //
+        return view('admin.topic-category.edit', compact('topic_category'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, TopicCategory $topicCategory)
+    public function update(Request $request, TopicCategory $topic_category)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        $data = [
+            'name' => $request->name,
+        ];
+
+        $topic_category->update($data);
+
+        return redirect()->route('admin.topic-category.index')->with('success', 'Topic Category Updated Successfully!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TopicCategory $topicCategory)
+    public function destroy(TopicCategory $topic_category)
     {
-        //
+        $topic_category->delete();
+
+        return redirect()->route('admin.topic-category.index')->with('success', 'Topic Category Deleted Successfully!');
     }
 }

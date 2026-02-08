@@ -13,7 +13,9 @@ class CompetitionTopicCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $data = CompetitionTopicCategory::all();
+
+        return view('admin.competition-topic-category.index', compact('data'));
     }
 
     /**
@@ -21,7 +23,7 @@ class CompetitionTopicCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.competition-topic-category.create');
     }
 
     /**
@@ -37,7 +39,7 @@ class CompetitionTopicCategoryController extends Controller
      */
     public function show(CompetitionTopicCategory $competitionTopicCategory)
     {
-        //
+        return view('admin.competition-topic-category.show', compact('competitionTopicCategory'));
     }
 
     /**
@@ -45,7 +47,7 @@ class CompetitionTopicCategoryController extends Controller
      */
     public function edit(CompetitionTopicCategory $competitionTopicCategory)
     {
-        //
+        return view('admin.competition-topic-category.edit', compact('competitionTopicCategory'));
     }
 
     /**
