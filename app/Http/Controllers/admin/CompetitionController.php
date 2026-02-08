@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Competition;
+use App\Models\CompetitionType;
 use Illuminate\Http\Request;
 
 class CompetitionController extends Controller
@@ -13,7 +14,9 @@ class CompetitionController extends Controller
      */
     public function index()
     {
-        //
+        $competitions = Competition::all();
+
+        return view('admin.competition.index', compact('competitions'));
     }
 
     /**
@@ -21,7 +24,9 @@ class CompetitionController extends Controller
      */
     public function create()
     {
-        //
+        $competition_types = CompetitionType::all();
+
+        return view('admin.competition.create', compact('competition_types'));
     }
 
     /**
@@ -37,7 +42,14 @@ class CompetitionController extends Controller
      */
     public function show(Competition $competition)
     {
-        //
+        return view('admin.competition.show');
+    }
+
+    public function preview()
+    {
+        $competitions = Competition::all();
+
+        return view('admin.competition.preview', compact('competitions'));
     }
 
     /**
@@ -45,7 +57,7 @@ class CompetitionController extends Controller
      */
     public function edit(Competition $competition)
     {
-        //
+        return view('admin.competition.edit');
     }
 
     /**
