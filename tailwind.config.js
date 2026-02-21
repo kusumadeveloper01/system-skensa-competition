@@ -37,6 +37,8 @@ export default {
 
                 "text-primary-color": "#38315A",
                 "text-secondary-color": "#8D8A9D",
+
+                "sidebar-color": "#001C2F",
             },
         },
     },

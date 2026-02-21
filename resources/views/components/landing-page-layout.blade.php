@@ -33,7 +33,32 @@
                 </ul>
 
                 <div class="button-container">
-
+                    <div class="relative group hidden lg:block">
+                        <button class="px-4 py-2 text-text-primary-color hover:text-accent-color transition-colors flex items-center gap-2">
+                            Masuk
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 14L8 10H16L12 14Z"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="{{ route('teacher.login') }}" class="block px-4 py-3 hover:bg-gray-100 rounded-t-lg">
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                    <span>Guru</span>
+                                </div>
+                            </a>
+                            <a href="#" class="block px-4 py-3 hover:bg-gray-100 rounded-b-lg">
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                                    </svg>
+                                    <span>Siswa</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                     <a href="#" class="button-primary">Daftar Sekarang
                     </a>
                     <div class="h-6 w-6 text-text-primary-color lg:hidden" onclick="showNav()">
@@ -51,6 +76,15 @@
                 <li><a href="#lomba" onclick="closeNav()">Lomba</a></li>
 
                 <div class="flex w-full flex-col gap-3 border-t border-text-inactive-color py-5">
+                    <div class="flex flex-col gap-2 mb-3">
+                        <p class="text-sm font-semibold text-gray-600">Masuk Sebagai:</p>
+                        <a href="{{ route('teacher.login') }}" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 text-center">
+                            Guru
+                        </a>
+                        <a href="#" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 text-center">
+                            Siswa
+                        </a>
+                    </div>
                     <button class="button-primary !w-full">Daftar Sekarang</button>
                 </div>
 
