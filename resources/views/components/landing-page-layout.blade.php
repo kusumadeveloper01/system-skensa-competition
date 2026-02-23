@@ -34,8 +34,19 @@
 
                 <div class="button-container">
 
-                    <a href="#" class="button-primary">Daftar Sekarang
-                    </a>
+                    @auth
+                        <a href="{{ route('student.profile') }}" class="flex items-center gap-2">
+                            <img src="{{ Auth::user()->photo ?? asset('images/default-profile.png') }}"
+                                class="w-10 h-10 rounded-full object-cover border">
+                            <span class="hidden lg:block">
+                                {{ Auth::user()->full_name }}
+                            </span>
+                        </a>
+                    @else
+                        <a href="{{ route('register-student') }}" class="button-primary">
+                            Daftar Sekarang
+                        </a>
+                    @endauth
                     <div class="h-6 w-6 text-text-primary-color lg:hidden" onclick="showNav()">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path>
