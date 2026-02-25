@@ -1,10 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\admin\CompetitionController;
+use App\Http\Controllers\admin\CompetitionTypeController;
 use App\Http\Controllers\Auth\LoginStudentController;
 use App\Http\Controllers\Auth\RegisStudentController;
-use App\Http\Controllers\admin\CompetitionTypeController;
+use App\Http\Controllers\CompetitionTopicCategoryController;
+use App\Http\Controllers\LandingPageController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return redirect()->route('landing-page');
@@ -14,6 +16,8 @@ Route::get('/', [LandingPageController::class, 'index'])->name('landing-page');
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('competition-type', CompetitionTypeController::class);
+    Route::resource('competition', CompetitionController::class);
+    Route::resource('topic-category', CompetitionTopicCategoryController::class);
 });
 
 Route::get('/home', function () {
