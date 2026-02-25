@@ -5,14 +5,8 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\Auth\LoginStudentController;
 use App\Http\Controllers\Auth\RegisStudentController;
 use App\Http\Controllers\admin\CompetitionTypeController;
-use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\teacher\AuthController as TeacherAuthController;
-use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return redirect()->route('landing-page');
-});
 
 Route::get('/', [LandingPageController::class, 'index'])->name('landing-page');
 

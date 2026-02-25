@@ -52,6 +52,11 @@
 <body class="bg-primary-color w-full h-screen font-satoshi relative flex justify-center items-center">
 
     <div class="box-dashboard flex flex-col gap-7 items-center mx-auto w-[90%] md:w-[50%] lg:w-[30%]">
+        <a href="{{ route('landing-page') }}" class="text-accent-color hover:underline flex items-center gap-2 self-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+        </a>
         <h1 class="page-title">Login</h1>
 
         @if ($errors->any())

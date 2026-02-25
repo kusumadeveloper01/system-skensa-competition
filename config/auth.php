@@ -41,9 +41,9 @@
             'provider' => 'users',
         ],
         
-        'admin' => [
+        'student' => [
             'driver' => 'session',
-            'provider' => 'admins',
+            'provider' => 'students',
         ],
         
         'teacher' => [
@@ -51,9 +51,9 @@
             'provider' => 'teachers',
         ],
         
-        'student' => [
+        'admin' => [
             'driver' => 'session',
-            'provider' => 'students',
+            'provider' => 'admins',
         ],
     ],
 

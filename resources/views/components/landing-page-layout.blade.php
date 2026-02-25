@@ -43,6 +43,32 @@
                             </span>
                         </a>
                     @else
+                        <div class="relative group hidden lg:block">
+                            <button class="flex items-center gap-2 px-4 py-2 border border-accent-color text-accent-color rounded-lg hover:bg-accent-color hover:text-white">
+                                Masuk
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 14L8 10H16L12 14Z"></path>
+                                </svg>
+                            </button>
+                            <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <a href="{{ route('teacher.login') }}" class="block px-4 py-3 hover:bg-gray-100 rounded-t-lg">
+                                    <div class="flex items-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                        </svg>
+                                        <span>Guru</span>
+                                    </div>
+                                </a>
+                                <a href="{{ route('login-page') }}" class="block px-4 py-3 hover:bg-gray-100 rounded-b-lg">
+                                    <div class="flex items-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                                        </svg>
+                                        <span>Siswa</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                         <a href="{{ route('register-student') }}" class="button-primary">
                             Daftar Sekarang
                         </a>
@@ -67,7 +93,7 @@
                         <a href="{{ route('teacher.login') }}" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 text-center">
                             Guru
                         </a>
-                        <a href="#" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 text-center">
+                        <a href="{{ route('login-page') }}" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 text-center">
                             Siswa
                         </a>
                     </div>

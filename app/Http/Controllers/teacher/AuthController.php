@@ -15,7 +15,7 @@ class AuthController extends Controller
             return redirect()->route('teacher.dashboard');
         }
         
-        return view('teacher.auth.login');
+        return view('auth.teacherlogin');
     }
     
     public function login(Request $request)
