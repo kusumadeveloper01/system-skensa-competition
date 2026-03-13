@@ -39,108 +39,143 @@
         }
     </script>
 
+    <style>
+        * {
+            transition: none !important;
+        }
+
+        #teacher-sidebar .bg-secondary-color {
+            background: transparent !important;
+        }
+
+        #teacher-sidebar .text-text-primary-color {
+            color: #ffffff !important;
+        }
+
+        #teacher-sidebar .border-l-accent-color {
+            border-left-color: #2764FF !important;
+        }
+
+        #teacher-sidebar a:hover,
+        #teacher-sidebar button:hover {
+            background: rgba(39, 100, 255, 0.1) !important;
+        }
+
+        #teacher-sidebar .bg-accent-secondary-color {
+            background: rgba(39, 100, 255, 0.1) !important;
+            border-left-color: #2764FF !important;
+        }
+
+        #teacher-sidebar li a,
+        #teacher-sidebar li button {
+            border-radius: 8px;
+            padding: 12px 16px !important;
+        }
+
+        #teacher-sidebar .text-accent-color {
+            color: #2764FF !important;
+        }
+
+        #teacher-sidebar .text-inactive-color {
+            color: rgba(255, 255, 255, 0.6) !important;
+        }
+
+        #teacher-sidebar.hidden-sidebar {
+            display: none;
+        }
+
+        body.sidebar-hidden nav {
+            margin-left: 0 !important;
+            width: 100% !important;
+        }
+
+        body.sidebar-hidden main,
+        body.sidebar-hidden footer {
+            margin-left: 0 !important;
+        }
+
+        #profileDropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 8px;
+            min-width: 200px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 8px 0;
+        }
+
+        #profileDropdown a {
+            display: block;
+            padding: 10px 16px;
+            color: #374151;
+            text-decoration: none;
+        }
+
+        #profileDropdown a:hover {
+            background: #f3f4f6;
+            color: #2764FF;
+        }
+    </style>
+
     @vite('resources/css/dashboard.css')
 </head>
 
 <body class="font-satoshi bg-primary-color">
     {{-- Sidebar --}}
-    <aside
-        class="w-72 h-screen border-r border-r-border-color overflow-y-auto fixed left-0 top-0 px-8 py-10 bg-secondary-color z-50">
+    <aside id="teacher-sidebar"
+        class="w-72 h-screen border-r border-r-border-color overflow-y-auto fixed left-0 top-0 px-8 py-10 z-50 bg-sidebar-color">
         <div>
             <div>
                 <div class="flex justify-center items-center p-5 rounded-lg ">
-                    {{-- @if ($navigation && $navigation->logo)
-                        <img src="{{ asset(path: $navigation->logo) }}" alt=""
-                            class="mx-auto h-20 object-contain">
-                    @endif --}}
+                    <h1 class="text-4xl font-bold text-white">SkensaLomba</h1>
                 </div>
             </div>
 
             <div class="pt-10">
                 <ul class="flex flex-col gap-3">
-                    {{-- <x-nav-link href="" :active="request()->is('admin/dashboard')"><x-slot:svg><svg
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1"
-                                    d="M8.557 2.75H4.682A1.93 1.93 0 0 0 2.75 4.682v3.875a1.94 1.94 0 0 0 1.932 1.942h3.875a1.94 1.94 0 0 0 1.942-1.942V4.682A1.94 1.94 0 0 0 8.557 2.75m10.761 0h-3.875a1.94 1.94 0 0 0-1.942 1.932v3.875a1.943 1.943 0 0 0 1.942 1.942h3.875a1.94 1.94 0 0 0 1.932-1.942V4.682a1.93 1.93 0 0 0-1.932-1.932m0 10.75h-3.875a1.94 1.94 0 0 0-1.942 1.933v3.875a1.94 1.94 0 0 0 1.942 1.942h3.875a1.94 1.94 0 0 0 1.932-1.942v-3.875a1.93 1.93 0 0 0-1.932-1.932M8.557 13.5H4.682a1.943 1.943 0 0 0-1.932 1.943v3.875a1.93 1.93 0 0 0 1.932 1.932h3.875a1.94 1.94 0 0 0 1.942-1.932v-3.875a1.94 1.94 0 0 0-1.942-1.942" />
-                            </svg></x-slot:svg> Dashboard
-                    </x-nav-link> --}}
-
-                    <x-nav-link href="" :active="request()->is('admin/event-registration*')"><x-slot:svg><svg
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M18.436 20.937H5.562a2.5 2.5 0 0 1-2.5-2.5V5.563a2.5 2.5 0 0 1 2.5-2.5h12.874a2.5 2.5 0 0 1 2.5 2.5v12.874a2.5 2.5 0 0 1-2.5 2.5M5.562 4.063a1.5 1.5 0 0 0-1.5 1.5v12.874a1.5 1.5 0 0 0 1.5 1.5h12.874a1.5 1.5 0 0 0 1.5-1.5V5.563a1.5 1.5 0 0 0-1.5-1.5Z" />
-                                <path fill="currentColor"
-                                    d="M6.544 8.283a.52.52 0 0 1-.353-.147a.5.5 0 0 1 0-.707a.5.5 0 0 1 .353-.146H7.55a.52.52 0 0 1 .353.146a.5.5 0 0 1 .147.354a.5.5 0 0 1-.5.5Zm0 4.217a.52.52 0 0 1-.353-.146a.5.5 0 0 1 0-.708a.52.52 0 0 1 .353-.146H7.55a.52.52 0 0 1 .353.146a.5.5 0 0 1 0 .708a.52.52 0 0 1-.353.146Zm0 4.22a.52.52 0 0 1-.353-.147a.5.5 0 0 1 0-.707a.52.52 0 0 1 .353-.146H7.55a.52.52 0 0 1 .353.146a.5.5 0 0 1 .147.354a.5.5 0 0 1-.5.5Zm4.01-8.439a.5.5 0 0 1 0-1h6.9a.5.5 0 0 1 0 1Zm0 4.219a.5.5 0 0 1 0-1h6.9a.5.5 0 0 1 0 1Zm0 4.218a.5.5 0 0 1 0-1h6.9a.5.5 0 0 1 0 1Z" />
-                            </svg></x-slot:svg> Registration
+                    <x-nav-link href="{{ route('teacher.dashboard') }}" :active="request()->is('teacher/dashboard')">
+                        <x-slot:svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z" />
+                            </svg>
+                        </x-slot:svg>
+                        Dashboard
                     </x-nav-link>
 
-
-
-                    <div>
-                        <x-multi-nav-link id="dropdown-parent-1" onclick="openDropdown2()" type="button"
-                            :active="request()->is('package*', 'staff*', 'customer*')"><x-slot:svg><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" viewBox="0 0 24 24">
-                                    <path fill="currentColor"
-                                        d="M5 5h4l3 3h6a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3m0 1a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-6.41l-3-3z" />
-                                </svg></x-slot:svg> Master Data</x-multi-nav-link>
-                        <ul id="dropdown-child-2" class="">
-                            <x-inside-multi-nav-link href="" :active="request()->is('admin/device-category*')">Device</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="" :active="request()->is('admin/game*')">Game</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href=""
-                                :active="request()->is('admin/organizer*')">Organizer</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href=""
-                                :active="request()->is('admin/tournament*')">Tournament</x-inside-multi-nav-link>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <x-multi-nav-link id="dropdown-parent-1" onclick="openDropdown2()" type="button"
-                            :active="request()->is('package*', 'staff*', 'customer*')"><x-slot:svg><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" viewBox="0 0 24 24">
-                                    <path fill="currentColor"
-                                        d="M5 5h4l3 3h6a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3m0 1a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-6.41l-3-3z" />
-                                </svg></x-slot:svg> CMS</x-multi-nav-link>
-                        <ul id="dropdown-child-2" class="">
-                            <x-inside-multi-nav-link href=""
-                                :active="request()->is('admin/navigation*')">Navigation</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="" :active="request()->is('admin/section-promo*')">Section
-                                Promo</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="" :active="request()->is('admin/featured-game*')">Section
-                                Game</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="" :active="request()->is('admin/section-tournament*')">Section
-                                Tournament</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="" :active="request()->is('admin/section-call-to-action*')">Section
-                                CTA</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="" :active="request()->is('admin/section-faq*')">Section
-                                FAQ</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="" :active="request()->is('admin/section-testimonial*')">Section
-                                Testimonial</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="" :active="request()->is('admin/section-gallery*')">Section
-                                Gallery</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="" :active="request()->is('admin/footer*')">Footer</x-inside-multi-nav-link>
-                            <x-inside-multi-nav-link href="" :active="request()->is('admin/social*')">Social
-                                Media</x-inside-multi-nav-link>
-                        </ul>
-                    </div>
+                    <x-nav-link href="{{ route('teacher.competitions') }}" :active="request()->is('teacher/competitions*')">
+                        <x-slot:svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43 2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 7h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 15c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64z" />
+                            </svg>
+                        </x-slot:svg>
+                        Competitions
+                    </x-nav-link>
 
                     <div>
                         <x-multi-nav-link id="dropdown-parent-1" onclick="openDropdown1()" type="button"
-                            :active="request()->is('package*', 'staff*', 'customer*')"><x-slot:svg><svg xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" viewBox="0 0 24 24">
+                            :active="request()->is('teacher/students*')">
+                            <x-slot:svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24">
                                     <path fill="currentColor"
-                                        d="M5 5h4l3 3h6a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3m0 1a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-6.41l-3-3z" />
-                                </svg></x-slot:svg> User</x-multi-nav-link>
-                        <ul id="dropdown-child-2" class="">
-                            <x-inside-multi-nav-link href=""
-                                :active="request()->is('admin/participant*')">Participant</x-inside-multi-nav-link>
+                                        d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8z" />
+                                </svg>
+                            </x-slot:svg>
+                            Master Data
+                        </x-multi-nav-link>
+                        <ul id="dropdown-child-1" class="hidden">
+                            <x-inside-multi-nav-link href="{{ route('teacher.students') }}" :active="request()->is('teacher/students*')">
+                                Siswa
+                            </x-inside-multi-nav-link>
                         </ul>
                     </div>
-
                 </ul>
 
-                <ul class="mt-28">
-                    <form id="logoutForm" action="" method="POST">
+                <ul>
+                    <form id="logoutForm" action="{{ route('teacher.logout') }}" method="POST">
                         @csrf
                         <x-nav-link href="javascript:void(0);" :active="request()->is('/logout')"
                             onclick="document.getElementById('logoutForm').submit();">
@@ -148,35 +183,85 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24">
                                     <path fill="currentColor"
-                                        d="M5.616 20q-.691 0-1.153-.462T4 18.384V5.616q0-.691.463-1.153T5.616 4h5.903q.214 0 .357.143t.143.357t-.143.357t-.357.143H5.616q-.231 0-.424.192T5 5.616v12.769q0 .23.192.423t.423.192h5.904q.214 0 .357.143t.143.357t-.143.357t-.357.143zm12.444-7.5H9.692q-.213 0-.356-.143T9.192 12t.143-.357t.357-.143h8.368l-1.971-1.971q-.141-.14-.15-.338q-.01-.199.15-.364q.159-.165.353-.168q.195-.003.36.162l2.614 2.613q.242.243.242.566t-.243.566l-2.613 2.613q-.146.146-.347.153t-.366-.159q-.16-.165-.157-.357t.162-.35z" />
+                                        d="M17 8l-1.41 1.41L17.17 11H9v2h8.17l-1.58 1.58L17 16l4-4l-4-4M5 5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h7v-2H5V5z" />
                                 </svg>
                             </x-slot:svg>
-                            Keluar
+                            Logout
                         </x-nav-link>
                     </form>
                 </ul>
-                <!-- <ul class="mt-28">
-                    <x-nav-link href="/" :active="request()->is('/')"><x-slot:svg><svg
-                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="currentColor"
-                        d="M5.616 20q-.691 0-1.153-.462T4 18.384V5.616q0-.691.463-1.153T5.616 4h5.903q.214 0 .357.143t.143.357t-.143.357t-.357.143H5.616q-.231 0-.424.192T5 5.616v12.769q0 .23.192.423t.423.192h5.904q.214 0 .357.143t.143.357t-.143.357t-.357.143zm12.444-7.5H9.692q-.213 0-.356-.143T9.192 12t.143-.357t.357-.143h8.368l-1.971-1.971q-.141-.14-.15-.338q-.01-.199.15-.364q.159-.165.353-.168q.195-.003.36.162l2.614 2.613q.242.243.242.566t-.243.566l-2.613 2.613q-.146.146-.347.153t-.366-.159q-.16-.165-.157-.357t.162-.35z" />
-                </svg></x-slot:svg> Keluar</x-nav-link>
-                </ul> -->
             </div>
         </div>
     </aside>
 
     {{-- Navbar --}}
-    <x-nav>Halo! Selamat Datang Admin
-        {{-- <span class="text-accent-color">{{ Auth::guard('admin')->user()->username }}</span> --}}
-    </x-nav>
+    <nav class="w-full xl:w-[calc(100%-288px)] xl:ml-72 fixed top-0 right-0 z-[60] px-8 py-4 flex items-center justify-between bg-primary-color"
+        style="box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <div class="flex items-center gap-4">
+            <button onclick="toggleSidebar()" class="p-2 rounded-lg hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                </svg>
+            </button>
+            <div class="text-lg font-medium">
+                Halo! Selamat Datang <span class="text-accent-color"></span>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-gray-100">
+                <div class="w-6 h-6 flex items-center justify-center" id="themeIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                </div>
+            </button>
+            <div class="relative">
+                <button onclick="toggleProfileDropdown()"
+                    class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100">
+                    <img src="https://ui-avatars.com/api/?name=&background=2764FF&color=fff" alt="Avatar"
+                        class="w-10 h-10 rounded-full">
+                    <div class="text-left">
+                        <div class="font-medium text-sm"></div>
+                        <div class="text-xs text-gray-500">Guru</div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                    </svg>
+                </button>
+                <div id="profileDropdown" class="hidden">
+                    <a href="#">Profile Saya</a>
+                    <a href="#">Pengaturan</a>
+                    <hr class="my-2">
+                    <a href="javascript:void(0);" onclick="document.getElementById('logoutForm').submit();">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
 
-    <main class="xl:w-[calc(100vw - 288px)] xl:ml-[288px] h-screen bg-primary-color">
-        <div class="px-14 py-24">
+    <main class="xl:ml-72 min-h-screen bg-primary-color" style="padding-top: 80px;">
+        <div class="px-14 py-8">
             {{ $slot }}
         </div>
     </main>
+
+    <footer class="xl:ml-72 px-8 py-4 flex items-center justify-between bg-primary-color">
+        <div class="text-sm text-gray-600">
+            © 2026 SkensaLomba. All rights reserved.
+        </div>
+        <div class="text-sm text-gray-600">
+            Develop By Kelompok Hitam
+        </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
