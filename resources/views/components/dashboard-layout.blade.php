@@ -166,7 +166,7 @@
                             </x-slot:svg>
                             Master Data
                         </x-multi-nav-link>
-                        <ul id="dropdown-child-1" class="hidden">
+                        <ul id="dropdown-child-1" class="">
                             <x-inside-multi-nav-link href="{{ route('admin.student.index') }}" :active="request()->is('admin/student*')">
                                 Siswa
                             </x-inside-multi-nav-link>
