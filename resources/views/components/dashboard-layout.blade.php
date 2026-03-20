@@ -135,7 +135,7 @@
 
             <div class="pt-10">
                 <ul class="flex flex-col gap-3">
-                    <x-nav-link href="{{ route('teacher.dashboard') }}" :active="request()->is('teacher/dashboard')">
+                    <x-nav-link href="{{ route('admin.dashboard') }}" :active="request()->is('admin/dashboard')">
                         <x-slot:svg>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z" />
@@ -144,7 +144,7 @@
                         Dashboard
                     </x-nav-link>
 
-                    <x-nav-link href="{{ route('teacher.competitions') }}" :active="request()->is('teacher/competitions*')">
+                    <x-nav-link href="{{ route('admin.competition.index') }}" :active="request()->is('admin/competition*')">
                         <x-slot:svg>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor"
@@ -156,7 +156,7 @@
 
                     <div>
                         <x-multi-nav-link id="dropdown-parent-1" onclick="openDropdown1()" type="button"
-                            :active="request()->is('teacher/students*')">
+                            :active="request()->is('admin/students*')">
                             <x-slot:svg>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24">
@@ -167,7 +167,7 @@
                             Master Data
                         </x-multi-nav-link>
                         <ul id="dropdown-child-1" class="hidden">
-                            <x-inside-multi-nav-link href="{{ route('teacher.students') }}" :active="request()->is('teacher/students*')">
+                            <x-inside-multi-nav-link href="{{ route('admin.students') }}" :active="request()->is('admin/students*')">
                                 Siswa
                             </x-inside-multi-nav-link>
                         </ul>
@@ -175,7 +175,7 @@
                 </ul>
 
                 <ul>
-                    <form id="logoutForm" action="{{ route('teacher.logout') }}" method="POST">
+                    <form id="logoutForm" action="{{ route('admin.logout') }}" method="POST">
                         @csrf
                         <x-nav-link href="javascript:void(0);" :active="request()->is('/logout')"
                             onclick="document.getElementById('logoutForm').submit();">

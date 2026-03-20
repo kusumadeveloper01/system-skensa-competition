@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\CompetitionTypeController;
 use App\Http\Controllers\Auth\LoginStudentController;
 use App\Http\Controllers\Auth\RegisStudentController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\teacher\AuthController as TeacherAuthController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
@@ -19,16 +20,16 @@ Route::prefix('teacher')->name('teacher.')->group(function () {
         Route::get('login', [TeacherAuthController::class, 'showLoginForm'])->name('login');
         Route::post('login', [TeacherAuthController::class, 'login']);
     });
-    
+
     // Protected routes
     Route::middleware('auth:teacher')->group(function () {
         Route::post('logout', [TeacherAuthController::class, 'logout'])->name('logout');
         Route::get('dashboard', [TeacherController::class, 'dashboard'])->name('dashboard');
-        
+
         // Students management
         Route::get('students', [TeacherController::class, 'students'])->name('students');
         Route::get('students/{id}', [TeacherController::class, 'studentDetail'])->name('students.detail');
-        
+
         // Competitions
         Route::get('competitions', [TeacherController::class, 'competitions'])->name('competitions');
         Route::get('competitions/{id}', [TeacherController::class, 'competitionDetail'])->name('competitions.detail');
@@ -37,9 +38,16 @@ Route::prefix('teacher')->name('teacher.')->group(function () {
 
 // Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {
+
+    // Route::get('login', )
+
     Route::resource('competition-type', CompetitionTypeController::class);
     Route::resource('competition', CompetitionController::class);
     Route::resource('topic-category', CompetitionTopicCategoryController::class);
+    Route::get('dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+    Route::resource('student', StudentController::class);
 });
 
 Route::get('/home', function () {
