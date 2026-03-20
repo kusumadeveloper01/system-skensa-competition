@@ -156,7 +156,7 @@
 
                     <div>
                         <x-multi-nav-link id="dropdown-parent-1" onclick="openDropdown1()" type="button"
-                            :active="request()->is('admin/students*')">
+                            :active="request()->is('admin/student*')">
                             <x-slot:svg>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24">
@@ -167,7 +167,7 @@
                             Master Data
                         </x-multi-nav-link>
                         <ul id="dropdown-child-1" class="hidden">
-                            <x-inside-multi-nav-link href="{{ route('admin.students') }}" :active="request()->is('admin/students*')">
+                            <x-inside-multi-nav-link href="{{ route('admin.student.index') }}" :active="request()->is('admin/student*')">
                                 Siswa
                             </x-inside-multi-nav-link>
                         </ul>

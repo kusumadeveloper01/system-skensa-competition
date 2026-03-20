@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CariEvent - Login</title>
+    <title>Login</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
@@ -28,7 +28,7 @@
             </div>
         @endif
 
-        <form action="{{ route('admin.login') }}" method="POST" class="w-full flex flex-col gap-7 items-center">
+        <form action="{{ route('admin.login.submit') }}" method="POST" class="w-full flex flex-col gap-7 items-center">
             @csrf
             <div class="flex flex-col gap-5 w-full">
                 <div class="input-group">

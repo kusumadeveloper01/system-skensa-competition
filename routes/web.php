@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\admin\AdminDashboardController;
 use App\Http\Controllers\admin\CompetitionController;
 use App\Http\Controllers\admin\CompetitionTopicCategoryController;
 use App\Http\Controllers\admin\CompetitionTypeController;
+use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\Auth\LoginStudentController;
 use App\Http\Controllers\Auth\RegisStudentController;
 use App\Http\Controllers\LandingPageController;
@@ -39,15 +41,17 @@ Route::prefix('teacher')->name('teacher.')->group(function () {
 // Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {
 
-    // Route::get('login', )
+    Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AdminAuthController::class, 'login'])->name('login.submit');
+    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
 
-    Route::resource('competition-type', CompetitionTypeController::class);
-    Route::resource('competition', CompetitionController::class);
-    Route::resource('topic-category', CompetitionTopicCategoryController::class);
-    Route::get('dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
-    Route::resource('student', StudentController::class);
+    Route::middleware('admin.auth')->group(function () {
+        Route::resource('competition-type', CompetitionTypeController::class);
+        Route::resource('competition', CompetitionController::class);
+        Route::resource('topic-category', CompetitionTopicCategoryController::class);
+        Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+        Route::resource('student', StudentController::class);
+    });
 });
 
 Route::get('/home', function () {
