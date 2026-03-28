@@ -4,11 +4,12 @@ use App\Http\Controllers\admin\AdminDashboardController;
 use App\Http\Controllers\admin\CompetitionController;
 use App\Http\Controllers\admin\CompetitionTopicCategoryController;
 use App\Http\Controllers\admin\CompetitionTypeController;
+use App\Http\Controllers\admin\StudentController as AdminStudentController;
+use App\Http\Controllers\admin\TeacherController as AdminTeacherController;
 use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\Auth\LoginStudentController;
 use App\Http\Controllers\Auth\RegisStudentController;
 use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\StudentController;
 use App\Http\Controllers\teacher\AuthController as TeacherAuthController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
@@ -49,8 +50,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('competition-type', CompetitionTypeController::class);
         Route::resource('competition', CompetitionController::class);
         Route::resource('topic-category', CompetitionTopicCategoryController::class);
+        Route::resource('teacher', AdminTeacherController::class);
         Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
-        Route::resource('student', StudentController::class);
+        Route::resource('student', AdminStudentController::class);
     });
 });
 

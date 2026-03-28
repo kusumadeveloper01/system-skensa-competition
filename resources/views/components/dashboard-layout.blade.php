@@ -84,13 +84,13 @@
             display: none;
         }
 
-        body.sidebar-hidden nav {
+        body.sidebar-hidden #admin-navbar {
             margin-left: 0 !important;
             width: 100% !important;
         }
 
-        body.sidebar-hidden main,
-        body.sidebar-hidden footer {
+        body.sidebar-hidden #admin-main,
+        body.sidebar-hidden #admin-footer {
             margin-left: 0 !important;
         }
 
@@ -104,6 +104,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             padding: 8px 0;
+            z-index: 80;
         }
 
         #profileDropdown a {
@@ -123,6 +124,11 @@
 </head>
 
 <body class="font-satoshi bg-primary-color">
+    @php
+        $adminUser = auth('admin')->user();
+        $adminName = $adminUser->username ?? 'Admin';
+    @endphp
+
     {{-- Sidebar --}}
     <aside id="teacher-sidebar"
         class="w-72 h-screen border-r border-r-border-color overflow-y-auto fixed left-0 top-0 px-8 py-10 z-50 bg-sidebar-color">
@@ -156,7 +162,7 @@
 
                     <div>
                         <x-multi-nav-link id="dropdown-parent-1" onclick="openDropdown1()" type="button"
-                            :active="request()->is('admin/student*')">
+                            :active="request()->is('admin/student*') || request()->is('admin/teacher*')">
                             <x-slot:svg>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24">
@@ -167,6 +173,9 @@
                             Master Data
                         </x-multi-nav-link>
                         <ul id="dropdown-child-1" class="">
+                            <x-inside-multi-nav-link href="{{ route('admin.teacher.index') }}" :active="request()->is('admin/teacher*')">
+                                Guru
+                            </x-inside-multi-nav-link>
                             <x-inside-multi-nav-link href="{{ route('admin.student.index') }}" :active="request()->is('admin/student*')">
                                 Siswa
                             </x-inside-multi-nav-link>
@@ -195,7 +204,8 @@
     </aside>
 
     {{-- Navbar --}}
-    <nav class="w-full xl:w-[calc(100%-288px)] xl:ml-72 fixed top-0 right-0 z-[60] px-8 py-4 flex items-center justify-between bg-primary-color"
+    <nav id="admin-navbar"
+        class="w-full xl:w-[calc(100%-288px)] xl:ml-72 fixed top-0 right-0 z-[60] px-8 py-4 flex items-center justify-between bg-primary-color"
         style="box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
         <div class="flex items-center gap-4">
             <button onclick="toggleSidebar()" class="p-2 rounded-lg hover:bg-gray-100">
@@ -204,7 +214,7 @@
                 </svg>
             </button>
             <div class="text-lg font-medium">
-                Halo! Selamat Datang <span class="text-accent-color"></span>
+                Halo! Selamat Datang <span class="text-accent-color">{{ $adminName }}</span>
             </div>
         </div>
         <div class="flex items-center gap-4">
@@ -225,13 +235,13 @@
                 </div>
             </button>
             <div class="relative">
-                <button onclick="toggleProfileDropdown()"
+                <button id="profileDropdownButton" onclick="toggleProfileDropdown()"
                     class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100">
-                    <img src="https://ui-avatars.com/api/?name=&background=2764FF&color=fff" alt="Avatar"
+                    <img src="https://ui-avatars.com/api/?name={{ urlencode($adminName) }}&background=2764FF&color=fff" alt="Avatar"
                         class="w-10 h-10 rounded-full">
                     <div class="text-left">
-                        <div class="font-medium text-sm"></div>
-                        <div class="text-xs text-gray-500">Guru</div>
+                        <div class="font-medium text-sm">{{ $adminName }}</div>
+                        <div class="text-xs text-gray-500">Admin</div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M7 10l5 5 5-5z" />
@@ -248,13 +258,13 @@
     </nav>
 
 
-    <main class="xl:ml-72 min-h-screen bg-primary-color" style="padding-top: 80px;">
+    <main id="admin-main" class="xl:ml-72 min-h-screen bg-primary-color" style="padding-top: 80px;">
         <div class="px-14 py-8">
             {{ $slot }}
         </div>
     </main>
 
-    <footer class="xl:ml-72 px-8 py-4 flex items-center justify-between bg-primary-color">
+    <footer id="admin-footer" class="xl:ml-72 px-8 py-4 flex items-center justify-between bg-primary-color">
         <div class="text-sm text-gray-600">
             © 2026 SkensaLomba. All rights reserved.
         </div>
@@ -333,6 +343,58 @@
                 calculateFinalFee();
             });
         })
+    </script>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('teacher-sidebar');
+            if (!sidebar) {
+                return;
+            }
+
+            const isHidden = sidebar.classList.toggle('hidden-sidebar');
+            document.body.classList.toggle('sidebar-hidden', isHidden);
+        }
+
+        function toggleProfileDropdown() {
+            const dropdown = document.getElementById('profileDropdown');
+            if (!dropdown) {
+                return;
+            }
+
+            dropdown.classList.toggle('hidden');
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            const iconContainer = document.getElementById('themeIcon');
+            const darkModeActive = body.classList.toggle('dark-mode');
+
+            if (!iconContainer) {
+                return;
+            }
+
+            if (darkModeActive) {
+                iconContainer.innerHTML =
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"/></svg>';
+            } else {
+                iconContainer.innerHTML =
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>';
+            }
+        }
+
+        document.addEventListener('click', function(event) {
+            const profileButton = document.getElementById('profileDropdownButton');
+            const dropdown = document.getElementById('profileDropdown');
+
+            if (!profileButton || !dropdown) {
+                return;
+            }
+
+            if (!profileButton.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
     </script>
 
 

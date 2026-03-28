@@ -13,7 +13,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.student.index');
     }
 
     /**
@@ -21,7 +21,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.student.create');
     }
 
     /**
@@ -29,7 +29,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect()->route('admin.student.index');
     }
 
     /**
@@ -37,7 +37,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return view('admin.student.show');
     }
 
     /**
@@ -45,7 +45,7 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return view('admin.student.edit');
     }
 
     /**
@@ -53,7 +53,7 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        return redirect()->route('admin.student.index');
     }
 
     /**
@@ -61,6 +61,6 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        return redirect()->route('admin.student.index');
     }
 }

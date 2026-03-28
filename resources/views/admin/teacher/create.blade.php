@@ -1,6 +1,6 @@
 <x-dashboard-layout>
     <div class="flex flex-row items-center gap-2">
-        <a href="{{ route('admin.competition-type.index') }} " class="breadcrumbs-inactive">Competition Type</a>
+        <a href="{{ route('admin.teacher.index') }} " class="breadcrumbs-inactive">Teacher</a>
         <h1 class="breadcrumbs-inactive"><i class="ri-arrow-right-s-line"></i></h1>
         <h1 class="breadcrumbs-active">Create</h1>
     </div>
@@ -8,7 +8,7 @@
 
 
     <div class="box-dashboard">
-        <form action="{{ route('admin.competition-type.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="#" method="POST" enctype="multipart/form-data">
             @csrf
 
             @if ($errors->any())
@@ -21,14 +21,29 @@
                 </div>
             @endif
             <div class="input-container">
-                <div class="input-group lg:col-span-2">
-                    <x-label for="name">Name</x-label>
-                    <x-input id="name" type="text" :disabled="false" name="name" value=""
-                        placeholder="Enter competition name..."></x-input>
+                <div class="input-group">
+                    <x-label for="full_name">Full Name</x-label>
+                    <x-input id="full_name" type="text" :disabled="false" name="full_name" value=""
+                        placeholder="Enter full name..."></x-input>
+                </div>
+                <div class="input-group">
+                    <x-label for="nip">NIP</x-label>
+                    <x-input id="nip" type="text" :disabled="false" name="nip" value=""
+                        placeholder="Enter NIP..."></x-input>
+                </div>
+                <div class="input-group">
+                    <x-label for="email">Email</x-label>
+                    <x-input id="email" type="email" :disabled="false" name="email" value=""
+                        placeholder="Enter email..."></x-input>
+                </div>
+                <div class="input-group">
+                    <x-label for="password">Password</x-label>
+                    <x-input id="password" type="password" :disabled="false" name="password" value=""
+                        placeholder="Enter password..."></x-input>
                 </div>
             </div>
             <div class="flex flex-row gap-3">
-                <a href="{{ route('admin.competition-type.index') }}" class="button-secondary" type="submit">Cancel</a>
+                <a href="{{ route('admin.teacher.index') }}" class="button-secondary" type="submit">Cancel</a>
                 <button class="button-primary" type="submit">Confirm</button>
             </div>
         </form>
