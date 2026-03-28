@@ -51,7 +51,7 @@ $(document).ready(function() {
 
         event.preventDefault();
         swal({
-            title: "Apakah kamu yakin mau menghaous data ini?",
+            title: "Apakah kamu yakin mau menghapus data ini?",
             text: "Jika kamu menghapus data ini, data ini akan hilang selamanya.",
             icon: "warning",
             type: "warning",

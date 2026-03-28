@@ -21,14 +21,16 @@
             <div class="logo">
                 <img src="" alt="" class="hidden lg:flex" />
                 <img src="" alt="" class="lg:hidden" />
-                <h1 class="logo font-poppins text-2xl font-semibold text-accent-color">
-                    SkensaLomba
-                </h1>
+                <a href="">
+                    <h1 class="logo font-poppins text-2xl font-semibold text-accent-color">
+                        SkensaLomba
+                    </h1>
+                </a>
             </div>
             <div class="flex flex-row items-center gap-12">
 
                 <ul class="nav-link-container">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="">Home</a></li>
                     <li><a href="#lomba">Lomba</a></li>
                 </ul>
 
@@ -44,25 +46,33 @@
                         </a>
                     @else
                         <div class="relative group hidden lg:block">
-                            <button class="flex items-center gap-2 px-4 py-2 border border-accent-color text-accent-color rounded-lg hover:bg-accent-color hover:text-white">
+                            <button
+                                class="flex items-center gap-2 px-4 py-2 border border-accent-color text-accent-color rounded-lg hover:bg-accent-color hover:text-white">
                                 Masuk
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentColor">
                                     <path d="M12 14L8 10H16L12 14Z"></path>
                                 </svg>
                             </button>
-                            <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                                <a href="{{ route('teacher.login') }}" class="block px-4 py-3 hover:bg-gray-100 rounded-t-lg">
+                            <div
+                                class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <a href="{{ route('teacher.login') }}"
+                                    class="block px-4 py-3 hover:bg-gray-100 rounded-t-lg">
                                     <div class="flex items-center gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                                         </svg>
                                         <span>Guru</span>
                                     </div>
                                 </a>
                                 <a href="{{ route('login-page') }}" class="block px-4 py-3 hover:bg-gray-100 rounded-b-lg">
                                     <div class="flex items-center gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
                                         </svg>
                                         <span>Siswa</span>
                                     </div>
@@ -84,16 +94,18 @@
 
         <div class="nav-mobile nav-hidden" id="nav-mobile">
             <ul>
-                <li><a href="#home" onclick="closeNav()">Home</a></li>
+                <li><a href="" onclick="closeNav()">Home</a></li>
                 <li><a href="#lomba" onclick="closeNav()">Lomba</a></li>
 
                 <div class="flex w-full flex-col gap-3 border-t border-text-inactive-color py-5">
                     <div class="flex flex-col gap-2 mb-3">
                         <p class="text-sm font-semibold text-gray-600">Masuk Sebagai:</p>
-                        <a href="{{ route('teacher.login') }}" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 text-center">
+                        <a href="{{ route('teacher.login') }}"
+                            class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 text-center">
                             Guru
                         </a>
-                        <a href="{{ route('login-page') }}" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 text-center">
+                        <a href="{{ route('login-page') }}"
+                            class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 text-center">
                             Siswa
                         </a>
                     </div>
@@ -118,84 +130,105 @@
     {{-- <x-nav>Halo, <span class="text-accent-color">{{ Auth::guard('participant')->user()->full_name }}</span> !</x-nav> --}}
 
     <footer>
-        <div class="footer-top text-white">
-            <div class="col-span-1 xl:col-span-3">
-                <div class="flex w-full justify-center xl:justify-start">
-                    <img src="" alt="" class="mx-auto lg:mx-0" />
-                    {{-- <h1 class="logo font-poppins text-2xl font-semibold text-primary-color">
-                        Tax Navigator
-                    </h1> --}}
+        <div class="text-white">
+            <div class="mx-auto w-[85%] grid grid-cols-1 md:grid-cols-2 gap-8 py-10">
+                <div>
+                    <a href="">
+                        <h1 class="logo font-poppins md:mt-10 text-5xl font-semibold text-primary-color">
+                            SkensaLomba
+                        </h1>
+                    </a>
                 </div>
-                <p class="mt-6 text-center text-sm xl:text-left">
-                    Stay connected with us for the latest tax updates, expert tips,
-                    exclusive resources, and more. Manage your taxes smarter—anytime,
-                    anywhere!
-                </p>
-            </div>
 
-            <div
-                class="col-span-1 grid grid-cols-2 gap-7 md:grid-cols-3 xl:col-span-6 xl:col-start-5 xl:grid-cols-4 xl:gap-0">
-                <div class="hidden xl:block"></div>
-                <div class="footer-link-container">
-                    <h3 class="footer-link-title">Information</h3>
-                    <ul>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">More Search</a></li>
-                        <li><a href="">Product</a></li>
-                        <li><a href="">Testimonial</a></li>
-                    </ul>
-                </div>
-                <div class="footer-link-container">
-                    <h3 class="footer-link-title">Helpful Link</h3>
-                    <ul>
-                        <li><a href="">Service</a></li>
-                        <li><a href="">Support</a></li>
-                        <li><a href="">Privacy Policy</a></li>
-                        <li><a href="">Terms & Condition</a></li>
-                    </ul>
-                </div>
-                <div class="footer-link-container">
-                    <h3 class="footer-link-title">Our Services</h3>
-                    <ul>
-                        <li><a href="">Q&A</a></li>
-                        <li><a href="">Customer Service</a></li>
-                    </ul>
+                <div class="flex flex-col gap-4">
+                    <p class="text-sm opacity-80 leading-relaxed">
+                        Temukan berbagai informasi lomba dari beragam bidang, mulai dari akademik, seni, hingga
+                        teknologi. SkensaLomba hadir untuk membantu kamu menemukan peluang terbaik, mengasah kemampuan,
+                        dan meraih prestasi.
+                    </p>
+
+                    <div class="flex items-center gap-2 text-sm">
+                        <svg class="w-5 h-5 text-primary-color" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z"
+                                    fill="#fcfcfc"></path>
+                            </g>
+                        </svg>
+                        <span>admin@skensalomba.com</span>
+                    </div>
+
+                    <div class="flex items-center gap-2 text-sm">
+                        <svg class="w-5 h-5 text-primary-color" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"
+                                    stroke="#fcfcfc" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                        <span>SMK Negeri 1 Denpasar</span>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div class="footer-bottom text-secondary-color">
             <div class="mx-auto flex w-[85%] flex-row items-center justify-between">
                 <div class="flex flex-row items-center gap-2 text-primary-color">
                     <div>
-                        <svg class="can-hover hover:brightness-75" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path fill="currentColor"
-                                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3" />
-                        </svg>
+                        <a href=""><svg class="can-hover hover:brightness-75"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3" />
+                            </svg>
+                        </a>
                     </div>
                     <div>
-                        <svg class="can-hover hover:brightness-75" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path fill="currentColor"
-                                d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
-                        </svg>
+                        <a href=""><svg class="can-hover hover:brightness-75"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                            </svg>
+                        </a>
                     </div>
                     <div>
-                        <svg class="can-hover hover:brightness-75" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path fill="currentColor"
-                                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95" />
-                        </svg>
+                        <a href=""><svg class="can-hover hover:brightness-75"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95" />
+                            </svg>
+                        </a>
                     </div>
                     <div>
-                        <svg class="can-hover hover:brightness-75" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path fill="currentColor"
-                                d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23" />
-                        </svg>
+                        <a href=""><svg class="can-hover hover:brightness-75"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div>
+                        <a href=""><svg class="can-hover hover:brightness-75"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2M9.5 8.5v7l6-3.5l-6-3.5Z" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <p>© 2025 carievent</p>
+                <p>© 2026 SkensaLomba</p>
             </div>
         </div>
     </footer>
