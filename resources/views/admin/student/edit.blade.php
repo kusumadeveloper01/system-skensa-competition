@@ -60,10 +60,11 @@
                 <div class="input-group">
                     <x-label for="teacher_id">Teacher (Optional)</x-label>
                     <x-select-option name="teacher_id" id="teacher_id">
-                        <option value="">Select teacher...</option>
-                        <option value="" selected>Teacher A - 198501012010011001</option>
-                        <option value="">Teacher B - 199002152015012001</option>
+                        <option value="">No teacher (null)</option>
+                        <option value="1" selected>Teacher A - 198501012010011001</option>
+                        <option value="2">Teacher B - 199002152015012001</option>
                     </x-select-option>
+                    <p class="text-xs text-inactive-color mt-2">Student bisa dipindahkan guru atau dikosongkan.</p>
                 </div>
 
                 <div class="input-group">

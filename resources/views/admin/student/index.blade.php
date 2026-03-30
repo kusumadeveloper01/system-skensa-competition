@@ -34,10 +34,11 @@
                     <th class="thead-cell">Class</th>
                     <th class="thead-cell">Major</th>
                     <th class="thead-cell">Teacher</th>
+                    <th class="thead-cell">Registrations</th>
                     <th class="thead-cell rounded-tr-xl">Action</th>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($data as $item)
+                    {{-- @forelse ($data as $item)
                         <tr>
                             <td class="table-cell">{{ $loop->iteration }}</td>
                             <td class="table-cell">{{ $item->full_name }}</td>
@@ -47,6 +48,7 @@
                             <td class="table-cell">{{ $item->class }}</td>
                             <td class="table-cell">{{ $item->major }}</td>
                             <td class="table-cell">{{ $item->teacher?->full_name ?? '-' }}</td>
+                            <td class="table-cell">{{ $item->competition_registration_count ?? 0 }}</td>
                             <td class="table-cell w-[20%]">
                                 <div class="flex flex-row gap-3 items-center">
                                     <a class="text-blue-500" href="{{ route('admin.student.show', $item->id) }}">
@@ -65,7 +67,11 @@
                                 </div>
                             </td>
                         </tr>
-                    @endforeach --}}
+                    @empty
+                        <tr>
+                            <td class="table-cell text-center" colspan="10">Looks like there's nothing here yet.</td>
+                        </tr>
+                    @endforelse --}}
                 </tbody>
             </table>
 

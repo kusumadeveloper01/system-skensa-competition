@@ -47,4 +47,46 @@
             <a href="{{ route('admin.student.index') }}" class="button-secondary" type="button">Back</a>
         </div>
     </div>
+
+    <div class="flex flex-row justify-between items-center mt-10">
+        <h1 class="page-title">Competition Registrations</h1>
+    </div>
+
+    <div class="box-dashboard !mt-3">
+        <div class="w-full overflow-x-auto">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="thead-cell rounded-tl-xl">#</th>
+                        <th class="thead-cell">Code</th>
+                        <th class="thead-cell">Competition</th>
+                        <th class="thead-cell">Date</th>
+                        <th class="thead-cell">Status</th>
+                        <th class="thead-cell">Payment Status</th>
+                        <th class="thead-cell rounded-tr-xl">Payment Proof</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table-cell">1</td>
+                        <td class="table-cell">REG-2026-0001</td>
+                        <td class="table-cell">UI/UX Competition</td>
+                        <td class="table-cell">21 Feb 2026</td>
+                        <td class="table-cell">approved</td>
+                        <td class="table-cell">paid</td>
+                        <td class="table-cell">proof_0001.jpg</td>
+                    </tr>
+                    <tr>
+                        <td class="table-cell">2</td>
+                        <td class="table-cell">REG-2026-0002</td>
+                        <td class="table-cell">Web Development Challenge</td>
+                        <td class="table-cell">24 Feb 2026</td>
+                        <td class="table-cell">pending</td>
+                        <td class="table-cell">unpaid</td>
+                        <td class="table-cell">-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </x-dashboard-layout>
